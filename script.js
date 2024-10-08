@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const treatments = {
         'Лечение зубов': [
             { name: 'Пломбирование зуба', minPrice: 5000, maxPrice: 7000 },
-            // Добавьте остальные услуги...
+            { name: 'Удаление зуба', minPrice: 8000, maxPrice: 12000 }
         ],
-        // Добавьте остальные виды лечения...
+        'Имплантация': [
+            { name: 'Имплантация Osstem с керамической коронкой', price: 78000 },
+            { name: 'Имплантация Straumann с циркониевой коронкой', price: 135000 }
+        ],
+        // Добавьте остальные виды лечения и услуги...
     };
 
     // Сохраненные выбранные зубы
@@ -76,11 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Функция обновления списка услуг
     function updateServices() {
         const treatmentType = document.getElementById('treatmentTypeSelect').value;
+        console.log('Выбранный вид лечения:', treatmentType);
         const services = treatments[treatmentType];
+        console.log('Соответствующие услуги:', services);
         const serviceSelect = document.getElementById('serviceSelect');
         serviceSelect.innerHTML = '';
         if (!services) {
-            // Если services undefined или null, выходим из функции
+            console.warn('Услуги не найдены для выбранного вида лечения.');
             return;
         }
         services.forEach(function(service, index) {
@@ -91,5 +97,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Остальная часть кода остается без изменений...
+    // Остальная часть кода без изменений...
 });
