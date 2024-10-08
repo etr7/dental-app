@@ -1,0 +1,148 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0C73FE;
+    color: white;
+    margin: 0;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: white;
+}
+
+#toothSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quadrant {
+    margin: 10px;
+    text-align: center;
+}
+
+.teeth {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tooth-button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    color: #0C73FE;
+    border: none;
+    border-radius: 5px;
+}
+
+.tooth-button.selected {
+    background-color: yellow;
+}
+
+#selectTreatmentButton, #exportButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: white;
+    color: #0C73FE;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#selectTreatmentButton:hover, #exportButton:hover {
+    background-color: #f0f0f0;
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #0C73FE;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: #ccc;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+select {
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #0C73FE;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    background-color: white;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+#totalPrice {
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .teeth {
+        flex-wrap: wrap;
+    }
+    .tooth-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
