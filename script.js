@@ -2,26 +2,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Данные видов лечения и услуг
     const treatments = {
         'Лечение зубов': [
-            { name: 'Наложение светоотверждаемой пломбы из композиционного материала Estelite', minPrice: 7000, maxPrice: 9230 },
-            { name: 'Эстетическая реставрация', minPrice: 13000, maxPrice: 16480 },
-            { name: 'Лечение периодонтита одноканального зуба', minPrice: 13500, maxPrice: 16480 },
-            { name: 'Лечение периодонтита одноканального зуба под микроскопом', minPrice: 18500, maxPrice: 22960 },
-            { name: 'Лечение периодонтита двухканального зуба', minPrice: 15500, maxPrice: 22960 },
-            { name: 'Лечение периодонтита двухканального зуба под микроскопом', minPrice: 22500, maxPrice: 26960 },
-            { name: 'Лечение периодонтита трехканального / четырехканального зуба', minPrice: 17500, maxPrice: 21960 },
-            { name: 'Лечение периодонтита трехканального / четырехканального зуба под микроскопом', minPrice: 26500, maxPrice: 30960 },
-            { name: 'Лечение пульпита одноканального зуба', minPrice: 9500, maxPrice: 13960 },
-            { name: 'Лечение пульпита одноканального зуба под микроскопом', minPrice: 13500, maxPrice: 17960 },
-            { name: 'Лечение пульпита двухканального зуба', minPrice: 11500, maxPrice: 15960 },
-            { name: 'Лечение пульпита двухканального зуба под микроскопом', minPrice: 15500, maxPrice: 19960 },
-            { name: 'Лечение пульпита трехканального / четырехканального зуба', minPrice: 13500, maxPrice: 17960 },
-            { name: 'Лечение пульпита трехканального / четырехканального зуба под микроскопом', minPrice: 19500, maxPrice: 23960 },
-            { name: 'Перелечивание одноканального зуба', minPrice: 15500, maxPrice: 19960 },
-            { name: 'Перелечивание одноканального зуба под микроскопом', minPrice: 21500, maxPrice: 25960 },
-            { name: 'Перелечивание двухканального зуба', minPrice: 19500, maxPrice: 23960 },
-            { name: 'Перелечивание двухканального зуба под микроскопом', minPrice: 26500, maxPrice: 30960 },
-            { name: 'Перелечивание трехканального / четырехканального зуба', minPrice: 21500, maxPrice: 25960 },
-            { name: 'Перелечивание трехканального / четырехканального зуба под микроскопом', minPrice: 31500, maxPrice: 35960 },
+            { name: 'Наложение светоотверждаемой пломбы из композиционного материала Estelite', price: 7000 },
+            { name: 'Эстетическая реставрация', price: 13000 },
+            { name: 'Лечение периодонтита одноканального зуба', price: 13500 },
+            { name: 'Лечение периодонтита одноканального зуба под микроскопом', price: 18500 },
+            { name: 'Лечение периодонтита двухканального зуба', price: 15500 },
+            { name: 'Лечение периодонтита двухканального зуба под микроскопом', price: 22500 },
+            { name: 'Лечение периодонтита трехканального / четырехканального зуба', price: 17500 },
+            { name: 'Лечение периодонтита трехканального / четырехканального зуба под микроскопом', price: 26500 },
+            { name: 'Лечение пульпита одноканального зуба', price: 9500 },
+            { name: 'Лечение пульпита одноканального зуба под микроскопом', price: 13500 },
+            { name: 'Лечение пульпита двухканального зуба', price: 11500 },
+            { name: 'Лечение пульпита двухканального зуба под микроскопом', price: 15500 },
+            { name: 'Лечение пульпита трехканального / четырехканального зуба', price: 13500 },
+            { name: 'Лечение пульпита трехканального / четырехканального зуба под микроскопом', price: 19500 },
+            { name: 'Перелечивание одноканального зуба', price: 15500 },
+            { name: 'Перелечивание одноканального зуба под микроскопом', price: 21500 },
+            { name: 'Перелечивание двухканального зуба', price: 19500 },
+            { name: 'Перелечивание двухканального зуба под микроскопом', price: 26500 },
+            { name: 'Перелечивание трехканального / четырехканального зуба', price: 21500 },
+            { name: 'Перелечивание трехканального / четырехканального зуба под микроскопом', price: 31500 },
             { name: 'Диагностика зубов под микроскопом', price: 5000 }
         ],
         'Имплантация': [
@@ -65,20 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: 'Герметизация фиссур', price: 3500 },
             { name: 'Фторирование зубов', price: 500 },
             // Лечение зубов
-            { name: 'Наложение пломбы Twinky Star', minPrice: 4550, maxPrice: 6150 },
-            { name: 'Пломба на постоянный зуб Эстелайт', minPrice: 5550, maxPrice: 6900 },
+            { name: 'Наложение пломбы Twinky Star', price: 4550 },
+            { name: 'Пломба на постоянный зуб Эстелайт', price: 5550 },
             // Хирургия
-            { name: 'Удаление подвижного зуба', minPrice: 1500, maxPrice: 2450 },
-            { name: 'Удаление молочного зуба', minPrice: 1700, maxPrice: 2650 },
-            { name: 'Удаление постоянного однокорневого зуба', minPrice: 4500, maxPrice: 5900 },
-            { name: 'Удаление постоянного многокорневого зуба', minPrice: 6500, maxPrice: 7900 },
+            { name: 'Удаление подвижного зуба', price: 1500 },
+            { name: 'Удаление молочного зуба', price: 1700 },
+            { name: 'Удаление постоянного однокорневого зуба', price: 4500 },
+            { name: 'Удаление постоянного многокорневого зуба', price: 6500 },
             // Протезирование
-            { name: 'Протезирование молочного зуба металлической коронкой', minPrice: 9900, maxPrice: 11500 },
-            { name: 'Протезирование молочного зуба металлической коронкой с композитной облицовкой', minPrice: 10900, maxPrice: 12500 }
+            { name: 'Протезирование молочного зуба металлической коронкой', price: 9900 },
+            { name: 'Протезирование молочного зуба металлической коронкой с композитной облицовкой', price: 10900 }
         ],
         'Костная пластика': [
-            { name: 'Односторонний закрытый синус-лифтинг', minPrice: 32500, maxPrice: 35000 },
-            { name: 'Односторонний открытый синус-лифтинг', minPrice: 58500, maxPrice: 100000 }
+            { name: 'Односторонний закрытый синус-лифтинг', price: 32500 },
+            { name: 'Односторонний открытый синус-лифтинг', price: 58500 }
         ],
         'Отбеливание зубов': [
             { name: 'Отбеливание Amazing white', price: 19500 },
@@ -161,13 +161,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Обработчики поиска
         const treatmentSearch = document.getElementById('treatmentSearch');
         treatmentSearch.value = '';
-        treatmentSearch.addEventListener('input', filterTreatmentTypes);
+        treatmentSearch.oninput = filterTreatmentTypes;
 
         const serviceSearch = document.getElementById('serviceSearch');
         serviceSearch.value = '';
-        serviceSearch.addEventListener('input', filterServices);
+        serviceSearch.oninput = filterServices;
 
-        treatmentTypeSelect.addEventListener('change', updateServices);
+        treatmentTypeSelect.onchange = function() {
+            updateServices();
+            updateServicePrice();
+        };
+
+        const serviceSelect = document.getElementById('serviceSelect');
+        serviceSelect.onchange = updateServicePrice;
 
         document.getElementById('treatmentModal').style.display = 'block';
     }
@@ -190,46 +196,77 @@ document.addEventListener('DOMContentLoaded', function() {
         // Устанавливаем первый элемент как выбранный
         if (serviceSelect.options.length > 0) {
             serviceSelect.selectedIndex = 0;
+            updateServicePrice();
+        }
+    }
+
+    // Функция обновления отображения цены услуги
+    function updateServicePrice() {
+        const treatmentType = document.getElementById('treatmentTypeSelect').value;
+        const serviceSelect = document.getElementById('serviceSelect');
+        const serviceIndex = serviceSelect.value;
+        const service = treatments[treatmentType][serviceIndex];
+        const servicePriceElement = document.getElementById('servicePrice');
+
+        if (service.price) {
+            servicePriceElement.textContent = `${service.price} ₽`;
+        } else {
+            servicePriceElement.textContent = `Цена не указана`;
         }
     }
 
     // Фильтрация видов лечения
     function filterTreatmentTypes() {
-        const query = document.getElementById('treatmentSearch').value.toLowerCase();
+        const query = this.value.toLowerCase();
         const treatmentTypeSelect = document.getElementById('treatmentTypeSelect');
+        let found = false;
         for (let option of treatmentTypeSelect.options) {
             if (option.text.toLowerCase().includes(query)) {
                 option.style.display = '';
+                if (!found) {
+                    option.selected = true;
+                    found = true;
+                }
             } else {
                 option.style.display = 'none';
             }
         }
-        // Автоматически выбираем первый видимый элемент
-        for (let i = 0; i < treatmentTypeSelect.options.length; i++) {
-            if (treatmentTypeSelect.options[i].style.display !== 'none') {
-                treatmentTypeSelect.selectedIndex = i;
-                updateServices();
-                break;
-            }
+        if (found) {
+            updateServices();
+            updateServicePrice();
+        } else {
+            document.getElementById('serviceSelect').innerHTML = '';
+            document.getElementById('servicePrice').textContent = '---';
         }
     }
 
     // Фильтрация услуг
     function filterServices() {
-        const query = document.getElementById('serviceSearch').value.toLowerCase();
+        const query = this.value.toLowerCase();
         const serviceSelect = document.getElementById('serviceSelect');
+        let found = false;
         for (let option of serviceSelect.options) {
             if (option.text.toLowerCase().includes(query)) {
                 option.style.display = '';
+                if (!found) {
+                    option.selected = true;
+                    found = true;
+                }
             } else {
                 option.style.display = 'none';
             }
+        }
+        if (found) {
+            updateServicePrice();
+        } else {
+            document.getElementById('servicePrice').textContent = '---';
         }
     }
 
     // Закрытие модального окна выбора лечения
     document.getElementById('closeTreatmentModal').addEventListener('click', function() {
         document.getElementById('treatmentModal').style.display = 'none';
+        document.getElementById('servicePrice').textContent = '---';
     });
 
     // Добавление лечения в план
@@ -239,21 +276,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const treatmentType = treatmentTypeSelect.value;
         const serviceIndex = serviceSelect.value;
         const service = treatments[treatmentType][serviceIndex];
-        let price = parseFloat(document.getElementById('priceInput').value);
-        if (isNaN(price) || price <= 0) {
-            alert('Пожалуйста, укажите корректную цену.');
-            return;
-        }
-        // Проверка цены в диапазоне
-        if (service.minPrice && service.maxPrice) {
-            if (price < service.minPrice || price > service.maxPrice) {
-                alert(`Цена должна быть в диапазоне от ${service.minPrice} до ${service.maxPrice} ₽`);
-                return;
-            }
-        } else if (service.price && price !== service.price) {
-            alert(`Цена должна быть ${service.price} ₽`);
-            return;
-        }
+
+        let price = service.price || 0;
+
         selectedTeeth.forEach(function(toothNumber) {
             treatmentPlan.push({
                 toothNumber: toothNumber,
@@ -274,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Сброс полей поиска и цены
         document.getElementById('treatmentSearch').value = '';
         document.getElementById('serviceSearch').value = '';
-        document.getElementById('priceInput').value = '';
+        document.getElementById('servicePrice').textContent = '---';
     });
 
     // Обновление таблицы плана лечения
@@ -329,6 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('treatmentModal');
         if (event.target == modal) {
             modal.style.display = "none";
+            document.getElementById('servicePrice').textContent = '---';
         }
     });
 });
