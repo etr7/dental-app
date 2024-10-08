@@ -1,0 +1,13 @@
+function highlightToothOnVisualization(toothNumber) {
+    const tooth = document.getElementById('tooth' + toothNumber);
+    if (tooth) {
+        tooth.style.fill = 'red'; // Цвет подсветки
+    }
+}
+
+function removeHighlightFromTooth(toothNumber) {
+    const tooth = document.getElementById('tooth' + toothNumber);
+    if (tooth) {
+        tooth.style.fill = '#fff'; // Исходный цвет
+    }
+}
