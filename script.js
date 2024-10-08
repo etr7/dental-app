@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let treatmentPlan = [];
 
     // Обработчики для кнопок выбора зубов
-    document.querySelectorAll('.tooth-button').forEach(function(button) {
+    const toothButtons = document.querySelectorAll('.tooth-button');
+    toothButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             const toothNumber = this.dataset.tooth;
             if (selectedTeeth.includes(toothNumber)) {
@@ -31,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Открытие модального окна выбора лечения
-    document.getElementById('selectTreatmentButton').addEventListener('click', function() {
+    const selectTreatmentButton = document.getElementById('selectTreatmentButton');
+    selectTreatmentButton.addEventListener('click', function() {
         if (selectedTeeth.length === 0) {
             alert('Пожалуйста, выберите хотя бы один зуб.');
             return;
@@ -51,10 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         updateServices();
         // Обработчики поиска
-        document.getElementById('treatmentSearch').addEventListener('input', filterTreatmentTypes);
-        document.getElementById('serviceSearch').addEventListener('input', filterServices);
-        // Обновляем услуги при смене вида лечения
+        const treatmentSearch = document.getElementById('treatmentSearch');
+        treatmentSearch.removeEventListener('input', filterTreatmentTypes);
+        treatmentSearch.addEventListener('input', filterTreatmentTypes);
+
+        const serviceSearch = document.getElementById('serviceSearch');
+        serviceSearch.removeEventListener('input', filterServices);
+        serviceSearch.addEventListener('input', filterServices);
+
+        treatmentTypeSelect.removeEventListener('change', updateServices);
         treatmentTypeSelect.addEventListener('change', updateServices);
+
         document.getElementById('treatmentModal').style.display = 'block';
     }
 
@@ -178,14 +187,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Функция подсветки зуба на визуализации
     function highlightToothOnVisualization(toothNumber) {
-        // Для простоты подсветки можем использовать console.log
-        console.log('Подсветить зуб на визуализации:', toothNumber);
+        // Здесь вы можете реализовать подсветку зуба на визуализации
+        // Для простоты, пока можно оставить пустым
     }
 
     // Функция удаления подсветки зуба
     function removeHighlightFromTooth(toothNumber) {
-        // Для простоты удаления подсветки можем использовать console.log
-        console.log('Убрать подсветку зуба на визуализации:', toothNumber);
+        // Здесь вы можете реализовать удаление подсветки зуба на визуализации
+        // Для простоты, пока можно оставить пустым
     }
 
     // Экспорт в PDF
@@ -194,10 +203,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Закрытие модального окна при клике вне его
-    window.onclick = function(event) {
+    window.addEventListener('click', function(event) {
         const modal = document.getElementById('treatmentModal');
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    });
 });
