@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>План лечения</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>План лечения</h1>
+
+<!-- Раздел выбора зубов -->
+<h2>УКАЖИТЕ ЗУБЫ ДЛЯ ДОБАВЛЕНИЯ ПРОЦЕДУР</h2>
+<div id="toothSelection">
+    <!-- Квадранты -->
+    <div class="quadrant">
+        <h3>Верхняя правая</h3>
+        <div class="teeth">
+            <!-- Зубы 18-11 -->
+            <button class="tooth-button" data-tooth="18">18</button>
+            <!-- Добавьте остальные кнопки зубов -->
+            <!-- ... -->
+            <button class="tooth-button" data-tooth="11">11</button>
+        </div>
+    </div>
+    <!-- Добавьте остальные квадранты -->
+    <!-- Верхняя левая, Нижняя левая, Нижняя правая -->
+</div>
+
+<!-- Кнопка для выбора вида лечения -->
+<button id="selectTreatmentButton">Выбрать вид лечения</button>
+
+<!-- Модальное окно выбора лечения -->
+<div id="treatmentModal" class="modal">
+    <div class="modal-content">
+        <span id="closeTreatmentModal" class="close">&times;</span>
+        <h2>Выберите вид лечения</h2>
+        <input type="text" id="treatmentSearch" placeholder="Поиск по видам лечения...">
+        <select id="treatmentTypeSelect" size="5">
+            <!-- Опции видов лечения будут добавлены динамически -->
+        </select>
+        <h3>Выберите услугу</h3>
+        <input type="text" id="serviceSearch" placeholder="Поиск по услугам...">
+        <select id="serviceSelect" size="5">
+            <!-- Опции услуг будут зависеть от выбранного вида лечения -->
+        </select>
+        <h3>Укажите цену</h3>
+        <input type="number" id="priceInput" min="0" step="0.01"> ₽
+        <button id="addTreatment">Добавить в план</button>
+    </div>
+</div>
+
+<!-- Отображение плана лечения -->
+<h2>План лечения</h2>
+<div id="treatmentPlanContainer">
+    <!-- Визуализация челюсти -->
+    <div id="jawVisualization">
+        <!-- Здесь будет SVG или изображение челюсти -->
+        <!-- Зубы будут подсвечены в зависимости от процедур -->
+    </div>
+    <!-- Список процедур -->
+    <table id="treatmentPlan">
+        <thead>
+            <tr>
+                <th>№ зуба</th>
+                <th>Вид лечения</th>
+                <th>Услуга</th>
+                <th>Цена</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Строки плана лечения будут добавляться динамически -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Итого:</strong></td>
+                <td colspan="2"><strong id="totalPrice">0 ₽</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- Кнопка экспорта -->
+<button id="exportButton">Экспортировать в PDF</button>
+
+<!-- Подключаем скрипт -->
+<script src="script.js"></script>
+</body>
+</html>
