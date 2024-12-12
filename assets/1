@@ -1,0 +1,5 @@
+<svg id="jawVisualization" viewBox="0 0 600 200">
+    <!-- Зуб 11 -->
+    <path id="tooth11" d="M..." fill="#fff" stroke="#000"></path>
+    <!-- Добавьте остальные зубы -->
+</svg>
